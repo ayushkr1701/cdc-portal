@@ -51,15 +51,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // Placement Data
-const heading = ['Branch', '2021-22', '2020-21', '2019-20'];
+const heading = ['Branch', '2020-21', '2019-20'];
 const data = [
-  ['CSE', 100, 100, 100, 'Computer Science Engineering'],
-  ['EE', 95.74, 81, 84, 'Electrical Engineering'],
-  ['ME', 91.89, 65, 83, 'Mechanical Engineering'],
-  ['BB', 100, 0, 0, 'BioEngineering'],
+  ['CSE', 100, 100, 'Computer Science Engineering'],
+  ['EE', 81, 84, 'Electrical Engineering'],
+  ['ME', 65, 83, 'Mechanical Engineering'],
 ];
 
-const overall = [97.18, 83, 89];
+const overall = [83, 89];
 
 const PlacementStatistics = () => {
   const classes = useStyles();
@@ -121,9 +120,6 @@ const PlacementStatistics = () => {
                       <TableCell className={classes.body}>
                         <b>{heading[2]}</b>
                       </TableCell>
-                      <TableCell className={classes.body}>
-                        <b>{heading[3]}</b>
-                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -135,16 +131,13 @@ const PlacementStatistics = () => {
                             component="th"
                             scope="row"
                           >
-                            {Data[4]} ({Data[0]})
+                            {Data[3]} ({Data[0]})
                           </TableCell>
                           <TableCell className={classes.body} align="left">
                             {Data[1]}%
                           </TableCell>
                           <TableCell className={classes.body} align="left">
                             {Data[2]}%
-                          </TableCell>
-                          <TableCell className={classes.body} align="left">
-                            {Data[3]}%
                           </TableCell>
                         </TableRow>
                       );
@@ -163,9 +156,6 @@ const PlacementStatistics = () => {
                       <TableCell className={classes.body} align="left">
                         {overall[1]}%
                       </TableCell>
-                      <TableCell className={classes.body} align="left">
-                        {overall[2]}%
-                      </TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -175,9 +165,7 @@ const PlacementStatistics = () => {
                 height={'500px'}
                 chartType="ComboChart"
                 loader={<div>Loading Chart</div>}
-                data={[heading].concat(
-                  data.map((d) => [d[0], d[1], d[2], d[3]])
-                )}
+                data={[heading].concat(data.map((d) => [d[0], d[1], d[2]]))}
                 options={{
                   vAxis: { title: 'Placement Percentage', minValue: 0 },
                   hAxis: { title: 'Departments' },
@@ -188,7 +176,7 @@ const PlacementStatistics = () => {
                     startup: true,
                   },
                   seriesType: 'bars',
-                  series: { 2: { type: 'bars' } },
+                  series: { 2: { type: 'line' } },
                 }}
                 rootProps={{ 'data-testid': '1' }}
               />
@@ -201,7 +189,6 @@ const PlacementStatistics = () => {
                   ['Year', 'Placement Percentage'],
                   [heading[1], overall[0]],
                   [heading[2], overall[1]],
-                  [heading[3], overall[2]],
                 ]}
                 options={{
                   vAxis: { title: 'Year' },
