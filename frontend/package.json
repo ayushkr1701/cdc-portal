@@ -14,7 +14,7 @@
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "framer-motion": "^4.1.17",
-    "google-map-react": "^2.1.9",
+    "google-map-react": "^2.2.0",
     "http-proxy-middleware": "^2.0.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
