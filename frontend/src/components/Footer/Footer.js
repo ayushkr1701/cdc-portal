@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: 'white',
     background:
-      'url(https://www.linkpicture.com/q/hero-bg_1.png) top center no-repeat',
+      'url(https://drive.google.com/uc?export=view&id=1YfbMtBo4diO8XseIDC7x7fUYcECOXL7b) top center no-repeat',
     color: '#012970',
     padding: theme.spacing(3, 0),
   },
